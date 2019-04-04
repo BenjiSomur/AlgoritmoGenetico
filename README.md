@@ -2,7 +2,7 @@
 
 Mimizar:
 
-<img src="https://latex.codecogs.com/gif.latex?f(\vec{x}):&space;-\left&space;|&space;\frac{\sum_{i=1}^{n}&space;cos^{4}(x_{i})-\prod_{i=1}^{n}cos^{2}(x_{i})}{\sqrt{\sum_{i=1}^{n}i*x_{i}^{2}}}&space;\right&space;|" title="f(\vec{x}): -\left | \frac{\sum_{i=x}^{n} cos^{4}(x_{i})-\prod_{i=1}^{n}cos^{2}(x_{i})}{\sqrt{\sum_{i=1}^{n}i*x_{i}^{2}}} \right |" />
+<img src="https://latex.codecogs.com/gif.latex?f(\vec{x}):&space;-\left&space;|&space;\frac{\sum_{i=1}^{n}&space;cos^{4}(x_{i})-2\prod_{i=1}^{n}cos^{2}(x_{i})}{\sqrt{\sum_{i=1}^{n}i*x_{i}^{2}}}&space;\right&space;|" title="f(\vec{x}): -\left | \frac{\sum_{i=x}^{n} cos^{4}(x_{i})-\prod_{i=1}^{n}cos^{2}(x_{i})}{\sqrt{\sum_{i=1}^{n}i*x_{i}^{2}}} \right |" />
 
 Sujeto a:
 
