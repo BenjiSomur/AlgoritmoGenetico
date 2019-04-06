@@ -12,7 +12,7 @@ using namespace std;
 class Individuo
 {
   private:
-    vector<Valor> individuos;
+    vector<Valor> valores;
     double aptitud;
     void ordenar();
 
@@ -22,7 +22,7 @@ class Individuo
     double getAptitud();
     void setAptitud(double aptitud);
     vector<Valor> getValores();
-    static bool compararIndividuos(Individuo a, Individuo b);
+    static bool compararValores(Individuo a, Individuo b);
     ~Individuo();
 };
 
@@ -31,7 +31,7 @@ Individuo::Individuo() {}
 Individuo::~Individuo() {}
 vector<Valor> Individuo::getValores()
 {
-    return this->individuos;
+    return this->valores;
 }
 
 void Individuo::setAptitud(double aptitud)
@@ -46,16 +46,16 @@ double Individuo::getAptitud()
 
 void Individuo::agregarValor(Valor elemento)
 {
-    this->individuos.push_back(elemento);
+    this->valores.push_back(elemento);
     this->ordenar();
 }
 
 void Individuo::ordenar()
 {
-    sort(this->individuos.begin(), this->individuos.end(), Valor::compararValores);
+    sort(this->valores.begin(), this->valores.end(), Valor::compararValores);
 }
 
-bool Individuo::compararIndividuos(Individuo a, Individuo b)
+bool Individuo::compararValores(Individuo a, Individuo b)
 {
     return a.getAptitud() < b.getAptitud();
 }

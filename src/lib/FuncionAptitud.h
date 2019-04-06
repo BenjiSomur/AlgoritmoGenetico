@@ -14,58 +14,58 @@ using namespace std;
 class FuncionAptitud
 {
   private:
-    static double primeraSuma(Individuo poblacion);
-    static double multipOrdenada(Individuo poblacion);
-    static double segundaSuma(Individuo poblacion);
+    static double primeraSuma(Individuo individuo);
+    static double multipOrdenada(Individuo individuo);
+    static double segundaSuma(Individuo individuo);
 
   public:
     FuncionAptitud();
     ~FuncionAptitud();
-    static double calcularAptitud(Individuo poblacion);
+    static double calcularAptitud(Individuo individuo);
 };
 
 FuncionAptitud::FuncionAptitud() {}
 FuncionAptitud::~FuncionAptitud() {}
 
-double FuncionAptitud::primeraSuma(Individuo poblacion)
+double FuncionAptitud::primeraSuma(Individuo individuo)
 {
     double suma = 0.0;
     for (int x = 0; x < N; x++)
     {
-        double cosenoAux = pow(poblacion.getValores()[x].getCoseno(), 4);
+        double cosenoAux = pow(individuo.getValores()[x].getCoseno(), 4);
         suma += cosenoAux;
     }
     return suma;
 }
 
-double FuncionAptitud::multipOrdenada(Individuo poblacion)
+double FuncionAptitud::multipOrdenada(Individuo individuo)
 {
-    double multiplicacion = 0.0;
+    double multiplicacion = 1.0;
     for (int x = 0; x < N; x++)
     {
-        double cosenoAux = pow(poblacion.getValores()[x].getCoseno(), 2);
+        double cosenoAux = pow(individuo.getValores()[x].getCoseno(), 2);
         multiplicacion *= cosenoAux;
     }
     return multiplicacion;
 }
 
-double FuncionAptitud::segundaSuma(Individuo poblacion)
+double FuncionAptitud::segundaSuma(Individuo individuo)
 {
     double suma = 0.0;
     for (int x = 0; x < N; x++)
     {
-        double valorAux = poblacion.getValores()[x].getValor();
+        double valorAux = individuo.getValores()[x].getValor();
         double multipAux = x * (pow(valorAux, 2));
         suma += multipAux;
     }
     return suma;
 }
 
-double FuncionAptitud::calcularAptitud(Individuo poblacion)
+double FuncionAptitud::calcularAptitud(Individuo individuo)
 {
     double resultado = 0.0;
-    resultado = (primeraSuma(poblacion) - (2 * multipOrdenada(poblacion)));
-    resultado = resultado / sqrt(segundaSuma(poblacion));
+    resultado = (primeraSuma(individuo) - (2 * multipOrdenada(individuo)));
+    resultado = resultado / sqrt(segundaSuma(individuo));
     resultado = abs(resultado);
     resultado *= -1;
     return resultado;
